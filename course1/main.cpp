@@ -12,5 +12,10 @@ int main()
     cout << "5: Print wallet" << endl;
     cout << "6: Continue" << endl;
     
+    //read user input
+    int userOption;
+    cout << "Type in 1-6" << endl;
+    cin >> userOption;
+
     return 0;
 }
