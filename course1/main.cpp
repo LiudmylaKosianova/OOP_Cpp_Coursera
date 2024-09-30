@@ -4,7 +4,10 @@ using namespace std;
 
 int main()
 {
+    while(true)
+    {
     //menu options
+    cout << "=======MENU=======" << endl;
     cout << "1: Print help" << endl;
     cout << "2: Print exchange stats" << endl;
     cout << "3: Place an offer" << endl;
@@ -41,6 +44,7 @@ int main()
         default:
         cout << "Bad input. Please, choose the number 1-6." << endl;
         break;
+    }
     }
     
 
