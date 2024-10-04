@@ -18,10 +18,40 @@ int getUserOption()
 {
     //get user option
     cout << "" << endl;
-    cout << "Type in 1-6" << endl;
+    cout << "Type in 1-6: ";
     int userOption;
     cin >> userOption;
     return userOption;
+}
+
+void printHelp()
+{
+    cout << "Follow the instructions. Your goal is to make money." << endl;
+}
+
+void printStats()
+{
+    cout << "Your stats are empty." << endl;
+}
+
+void printOffer()
+{
+    cout << "Specify what you want to sell." << endl;
+}
+
+void printBid()
+{
+    cout << "Specify what you want to buy." << endl;
+}
+
+void printWallet()
+{
+    cout << "Your wallet is empty." << endl;
+}
+
+void goNext()
+{
+    cout << "Moving on." << endl;
 }
 
 void processUserOption(int userOption)
@@ -30,22 +60,22 @@ void processUserOption(int userOption)
     switch(userOption)
     {
         case 1:
-        cout << "Follow the instructions. Your goal is to make money." << endl;
+        printHelp();
         break;
         case 2:
-        cout << "Your stats are empty." << endl;
+        printStats();
         break;
         case 3:
-        cout << "Specify what you want to sell." << endl;
+        printOffer();
         break;
         case 4:
-        cout << "Specify what you want to buy." << endl;
+        printBid();
         break;
         case 5:
-        cout << "Your wallet is empty." << endl;
+        printWallet();
         break;
         case 6:
-        cout << "Moving on." << endl;
+        goNext();
         break;
         default:
         cout << "Bad input. Please, choose the number 1-6." << endl;
