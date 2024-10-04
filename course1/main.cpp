@@ -1,12 +1,9 @@
 #include <iostream>
 using namespace std;
 
-
-int main()
-{
-    while(true)
-    {
-    //menu options
+void printMenu()
+{ 
+    cout << " " << endl;
     cout << "=======MENU=======" << endl;
     cout << "1: Print help" << endl;
     cout << "2: Print exchange stats" << endl;
@@ -14,12 +11,21 @@ int main()
     cout << "4: Place a bid" << endl;
     cout << "5: Print wallet" << endl;
     cout << "6: Continue" << endl;
-    
-    //read user input
-    int userOption;
-    cout << "Type in 1-6" << endl;
-    cin >> userOption;
+    cout << "==================" << endl;
+}
 
+int getUserOption()
+{
+    //get user option
+    cout << "" << endl;
+    cout << "Type in 1-6" << endl;
+    int userOption;
+    cin >> userOption;
+    return userOption;
+}
+
+void processUserOption(int userOption)
+{
     //check user input and take actions
     switch(userOption)
     {
@@ -45,8 +51,16 @@ int main()
         cout << "Bad input. Please, choose the number 1-6." << endl;
         break;
     }
-    }
-    
+}
+
+int main()
+{
+    while(true)
+    {
+        printMenu();  
+        int userOption = getUserOption(); 
+        processUserOption(userOption);    
+    }    
 
     return 0;
 }
