@@ -35,5 +35,10 @@ int main()
                           "BTC/USDT",
                           OrderBookType::bid);
     std::cout << "The price is " << entry1.price << std::endl;
+
+    std::vector<OrderBookEntry> orders;
+    orders.push_back(entry1);
+
+    std::cout << "The price is " << orders[0].price << std::endl;
     return 0; 
 }
