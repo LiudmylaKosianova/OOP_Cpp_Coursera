@@ -1,36 +1,53 @@
 #include "MerkelMain.h"
 
     
-    MerkelMain::MerkelMain()
+MerkelMain::MerkelMain()
+{
+
+}
+
+void MerkelMain::init()
+{
+    loadOrderBook();
+    int input = 0;
+
+    while(true)
     {
+        printMenu();
+        input = getUserOption();
+        processUserOption(input);
 
     }
 
-    void MerkelMain::init()
-    {
-        int input = 0;
+}
 
-        while(true)
-        {
-            printMenu();
-            input = getUserOption();
-            processUserOption(input);
+void MerkelMain::loadOrderBook()
+{
+        
+    orders.push_back(OrderBookEntry{"2020/03/17 17:01:24.884492",
+                                    "ETH/BTC",
+                                    OrderBookType::bid,
+                                    0.02187307,
+                                    3.467434});
 
-        }
+    orders.push_back(OrderBookEntry{"2020/03/17 17:01:24.884492",
+                                    "ETH/BTC",
+                                    OrderBookType::bid,
+                                    0.02187305,
+                                    6.85567013});
+}
 
-    }
-
-    void MerkelMain::printMenu()
+void MerkelMain::printMenu()
 { 
-    cout << " " << endl;
-    cout << "=======MENU=======" << endl;
-    cout << "1: Print help" << endl;
-    cout << "2: Print exchange stats" << endl;
-    cout << "3: Place an offer" << endl;
-    cout << "4: Place a bid" << endl;
-    cout << "5: Print wallet" << endl;
-    cout << "6: Continue" << endl;
-    cout << "==================" << endl;
+        cout << " " << endl;
+        cout << "=======MENU=======" << endl;
+        cout << "1: Print help" << endl;
+        cout << "2: Print exchange stats" << endl;
+        cout << "3: Place an offer" << endl;
+        cout << "4: Place a bid" << endl;
+        cout << "5: Print wallet" << endl;
+        cout << "6: Continue" << endl;
+        cout << "==================" << endl;
 }
 
 int MerkelMain::getUserOption()
@@ -51,6 +68,7 @@ void MerkelMain::printHelp()
 void MerkelMain::printStats()
 {
     cout << "Your stats are empty." << endl;
+    cout << "Order Book contains: " << orders.size() << " entries" << endl;
 }
 
 void MerkelMain::printOffer()
