@@ -46,7 +46,12 @@ int main()
         while(std::getline(csvFile, line))
         {
             tokens = tokenise(line, ',');
-
+            if(tokens.size() != 5)
+            {
+                continue;
+            }
+            double price = std::stod(tokens[3]);
+            double amount = std::stod(tokens[4]);
         }
         csvFile.close();
     }
