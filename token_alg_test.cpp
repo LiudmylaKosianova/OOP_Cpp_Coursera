@@ -50,8 +50,14 @@ int main()
             {
                 continue;
             }
-            double price = std::stod(tokens[3]);
-            double amount = std::stod(tokens[4]);
+            
+            try
+            {
+                double price = std::stod(tokens[3]);
+                double amount = std::stod(tokens[4]);
+            }
+            catch(std::exception& e){continue;}
+            
         }
         csvFile.close();
     }
