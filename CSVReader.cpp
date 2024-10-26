@@ -13,11 +13,19 @@ vector<OrderBookEntry> CSVReader::readCSV(string CSVFilename)
     {
         while (getline(csvFile, line))
         {
+            try{
             OrderBookEntry obe = stringsToOBE(tokenise(line, ','));
             entries.push_back(obe);
+            }
+            catch(const std::exception& e)
+            {
+            std::cout << "exception caught" << std::endl;
+            }
         }
         
     }
+    csvFile.close();
+    std::cout << "Lines: " << entries.size() << std::endl;
     return entries;
 }
 

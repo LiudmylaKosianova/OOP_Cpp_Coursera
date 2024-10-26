@@ -16,7 +16,7 @@ int main()
     // MerkelMain app{};
     // app.init();
 
-    CSVReader read;    
+    CSVReader::readCSV("20200317.csv");    
 
     return 0;
 }
