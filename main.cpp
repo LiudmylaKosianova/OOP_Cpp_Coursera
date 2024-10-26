@@ -4,6 +4,7 @@
 
 #include "OrderBookEntry.h"
 #include "MerkelMain.h"
+#include "CSVReader.h"
 
 using namespace std;
 
@@ -12,8 +13,10 @@ using namespace std;
 
 int main()
 {
-    MerkelMain app{};
-    app.init();
+    // MerkelMain app{};
+    // app.init();
+
+    CSVReader read;    
 
     return 0;
 }

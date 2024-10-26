@@ -17,6 +17,6 @@ vector<string> CSVReader::tokenise(string csvLine, char separator)
 
 OrderBookEntry CSVReader::stringsToOBE(vector<string> strings)
 {
-    OrderBookEntry obe{"","", OrderBookType::bid,1,1};
+    OrderBookEntry obe{"","", OrderBookType::bid,1.0,1.0};
     return obe;
 }
