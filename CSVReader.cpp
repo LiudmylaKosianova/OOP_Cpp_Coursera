@@ -3,9 +3,21 @@
 CSVReader::CSVReader()
 {}
  
-vector<OrderBookEntry> CSVReader::readCSV(string CSVFile)
+vector<OrderBookEntry> CSVReader::readCSV(string CSVFilename)
 {
     vector<OrderBookEntry> entries;
+    ifstream csvFile{CSVFilename};
+    string line;
+
+    if(csvFile.is_open())
+    {
+        while (getline(csvFile, line))
+        {
+            OrderBookEntry obe = stringsToOBE(tokenise(line, ','));
+            entries.push_back(obe);
+        }
+        
+    }
     return entries;
 }
 

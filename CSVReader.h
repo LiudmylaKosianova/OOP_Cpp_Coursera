@@ -8,6 +8,7 @@
 
 using std::string;
 using std::vector;
+using std::ifstream;
 
 class CSVReader
 {
