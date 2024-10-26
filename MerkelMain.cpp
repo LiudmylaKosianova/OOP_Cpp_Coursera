@@ -1,4 +1,5 @@
 #include "MerkelMain.h"
+#include "CSVReader.h"
 
     
 MerkelMain::MerkelMain()
@@ -23,18 +24,7 @@ void MerkelMain::init()
 
 void MerkelMain::loadOrderBook()
 {
-        
-    orders.push_back(OrderBookEntry{"2020/03/17 17:01:24.884492",
-                                    "ETH/BTC",
-                                    OrderBookType::bid,
-                                    0.02187307,
-                                    3.467434});
-
-    orders.push_back(OrderBookEntry{"2020/03/17 17:01:24.884492",
-                                    "ETH/BTC",
-                                    OrderBookType::bid,
-                                    0.02187305,
-                                    6.85567013});
+    orders = CSVReader::readCSV("20200317.csv"); 
 }
 
 void MerkelMain::printMenu()
@@ -67,8 +57,16 @@ void MerkelMain::printHelp()
 
 void MerkelMain::printStats()
 {
-    cout << "Your stats are empty." << endl;
     cout << "Order Book contains: " << orders.size() << " entries" << endl;
+    unsigned int ask = 0;
+    unsigned int bid = 0;
+    for(OrderBookEntry& e : orders)
+    {
+        if(e.orderType == OrderBookType::ask) ++ask;
+        if(e.orderType == OrderBookType::bid) ++bid;
+    }
+    cout << "Number of bids: " << bid << endl;
+    cout << "Number of asks: " << ask << endl;
 }
 
 void MerkelMain::printOffer()
@@ -93,6 +91,7 @@ void MerkelMain::goNext()
 
 void MerkelMain::processUserOption(int userOption)
 {
+    cout << "" << endl;
     //check user input and take actions
     switch(userOption)
     {
