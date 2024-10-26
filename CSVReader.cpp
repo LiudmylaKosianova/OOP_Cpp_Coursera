@@ -12,6 +12,23 @@ vector<OrderBookEntry> CSVReader::readCSV(string CSVFile)
 vector<string> CSVReader::tokenise(string csvLine, char separator)
 { 
     vector<string> tokens;
+    int start, end;
+    start = csvLine.find_first_not_of(separator, 0);
+    string token;
+
+    do
+    {
+        end = csvLine.find_first_of(separator, start);
+        if(start == csvLine.length()||start == end) break;
+
+        if(end >= 0)token = csvLine.substr(start, end-start);
+        else token = csvLine.substr(start, csvLine.length()-start);
+
+        tokens.push_back(token);
+        start = end + 1;
+
+    }while(end > 0);
+
     return tokens;
 }
 
@@ -31,7 +48,11 @@ OrderBookEntry CSVReader::stringsToOBE(vector<string> tokens)
     }
     catch(const std::exception& e)
     {throw;}
-    
-    OrderBookEntry obe{"","", OrderBookType::bid,1.0,1.0};
+
+    OrderBookEntry obe{tokens[0],
+                       tokens[1],
+                       OrderBookEntry::stringToOrderBookType(tokens[2]),
+                       price,
+                       amount};
     return obe;
 }
