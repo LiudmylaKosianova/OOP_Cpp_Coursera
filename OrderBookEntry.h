@@ -4,7 +4,7 @@
 #include <string>
 
 
-enum class OrderBookType{bid, ask};
+enum class OrderBookType{bid, ask, unknown};
 
 class OrderBookEntry
 {
@@ -16,6 +16,8 @@ class OrderBookEntry
                    OrderBookType _orderType,
                    double _price,
                    double _amount);
+
+    static OrderBookType stringToOrderBookType(std::string s);
 
     //data types to represent a the fields in a row in the data file
     double price;
