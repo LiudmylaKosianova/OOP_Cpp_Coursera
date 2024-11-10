@@ -39,3 +39,15 @@ std::vector<OrderBookEntry> OrderBook::getOrders(OrderBookType type,
 
     return ordersSub;
 }
+
+double OrderBook::getHighPrice(std::vector<OrderBookEntry>& orders)
+{
+    double maxPrice = orders[0].price;
+    for(const OrderBookEntry& e : orders)
+    {
+        if(e.price > maxPrice) maxPrice = e.price;
+    }
+
+    return maxPrice;
+
+}

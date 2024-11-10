@@ -19,6 +19,8 @@ class OrderBook
     std::vector<OrderBookEntry> getOrders(OrderBookType type,
                                         std::string product,
                                         std::string timestamp); 
+    /**return the highest price */
+    static double getHighPrice(std::vector<OrderBookEntry>& orders);
 
     private:
     std::vector<OrderBookEntry> orders;
