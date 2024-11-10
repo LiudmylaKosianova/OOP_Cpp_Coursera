@@ -3,8 +3,11 @@
 #include <iostream>
 #include <string>
 #include <vector>
+
 #include "OrderBookEntry.h"
 #include "OrderBook.h"
+#include "CSVReader.h"
+
 using namespace std;
 
 class MerkelMain

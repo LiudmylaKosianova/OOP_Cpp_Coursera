@@ -1,5 +1,5 @@
 #include "MerkelMain.h"
-#include "CSVReader.h"
+
 
     
 MerkelMain::MerkelMain()
@@ -54,6 +54,10 @@ void MerkelMain::printHelp()
 
 void MerkelMain::printStats()
 {
+    for(std::string const& p : orderBook.getKnownProduct())
+    {
+        std::cout << "Product: " << p << std::endl;
+    }
     // cout << "Order Book contains: " << orders.size() << " entries" << endl;
     // unsigned int ask = 0;
     // unsigned int bid = 0;
