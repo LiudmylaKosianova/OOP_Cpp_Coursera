@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include "OrderBookEntry.h"
+#include "OrderBook.h"
 using namespace std;
 
 class MerkelMain
@@ -16,7 +17,7 @@ class MerkelMain
 
     private:
 
-    void loadOrderBook();
+     
     void printMenu();
     int getUserOption();
     void printHelp();
@@ -27,6 +28,6 @@ class MerkelMain
     void goNext();
     void processUserOption(int userOption);
 
-    std::vector<OrderBookEntry> orders;
+    OrderBook orderBook{"20200317.csv"};
  
 };

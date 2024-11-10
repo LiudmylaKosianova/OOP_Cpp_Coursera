@@ -9,7 +9,7 @@ MerkelMain::MerkelMain()
 
 void MerkelMain::init()
 {
-    loadOrderBook();
+     
     int input = 0;
 
     while(true)
@@ -22,10 +22,7 @@ void MerkelMain::init()
 
 }
 
-void MerkelMain::loadOrderBook()
-{
-    orders = CSVReader::readCSV("20200317.csv"); 
-}
+ 
 
 void MerkelMain::printMenu()
 { 
@@ -57,16 +54,16 @@ void MerkelMain::printHelp()
 
 void MerkelMain::printStats()
 {
-    cout << "Order Book contains: " << orders.size() << " entries" << endl;
-    unsigned int ask = 0;
-    unsigned int bid = 0;
-    for(OrderBookEntry& e : orders)
-    {
-        if(e.orderType == OrderBookType::ask) ++ask;
-        if(e.orderType == OrderBookType::bid) ++bid;
-    }
-    cout << "Number of bids: " << bid << endl;
-    cout << "Number of asks: " << ask << endl;
+    // cout << "Order Book contains: " << orders.size() << " entries" << endl;
+    // unsigned int ask = 0;
+    // unsigned int bid = 0;
+    // for(OrderBookEntry& e : orders)
+    // {
+    //     if(e.orderType == OrderBookType::ask) ++ask;
+    //     if(e.orderType == OrderBookType::bid) ++bid;
+    // }
+    // cout << "Number of bids: " << bid << endl;
+    // cout << "Number of asks: " << ask << endl;
 }
 
 void MerkelMain::printOffer()
