@@ -1,12 +1,20 @@
 #include "OrderBook.h"
 
 OrderBook::OrderBook(std::string filename)
-{}
-    /**return vector of all known products in the dataset */
+{
+    orders = CSVReader::readCSV(filename);
+}
+
 std::vector<std::string> OrderBook::getKnownProduct()
-{}
-    /**return vector of orders according to the filters */
+{
+    std::vector<std::string> products;
+    return products;
+}
+
 std::vector<OrderBookEntry> OrderBook::getOrders(OrderBookType type,
                                         std::string product,
                                         std::string timestamp)
-{}
+{
+    std::vector<OrderBookEntry> ordersV;
+    return ordersV;
+}

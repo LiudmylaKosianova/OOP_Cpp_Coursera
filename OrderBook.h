@@ -19,4 +19,7 @@ class OrderBook
                                         std::string product,
                                         std::string timestamp); 
 
+    private:
+    std::vector<OrderBookEntry> orders;
+
 };
