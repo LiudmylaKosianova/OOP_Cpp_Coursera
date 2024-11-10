@@ -51,3 +51,15 @@ double OrderBook::getHighPrice(std::vector<OrderBookEntry>& orders)
     return maxPrice;
 
 }
+
+double OrderBook::getLowPrice(std::vector<OrderBookEntry>& orders)
+{
+    double minPrice = orders[0].price;
+    for(const OrderBookEntry& e : orders)
+    {
+        if(e.price < minPrice) minPrice = e.price;
+    }
+
+    return minPrice;
+
+}

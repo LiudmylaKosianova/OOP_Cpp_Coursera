@@ -22,6 +22,8 @@ class OrderBook
     /**return the highest price */
     static double getHighPrice(std::vector<OrderBookEntry>& orders);
 
+    static double getLowPrice(std::vector<OrderBookEntry>& orders);
+
     private:
     std::vector<OrderBookEntry> orders;
 
