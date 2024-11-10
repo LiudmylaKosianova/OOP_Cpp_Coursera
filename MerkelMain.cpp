@@ -54,10 +54,14 @@ void MerkelMain::printHelp()
 
 void MerkelMain::printStats()
 {
+    std::vector<OrderBookEntry> entries;
     for(std::string const& p : orderBook.getKnownProduct())
     {
         std::cout << "Product: " << p << std::endl;
+        entries = orderBook.getOrders(OrderBookType::ask, p, "2020/03/17 17:01:24.884492");
     }
+
+    std::cout << "Asks seen: " << entries.size() << std::endl; 
     // cout << "Order Book contains: " << orders.size() << " entries" << endl;
     // unsigned int ask = 0;
     // unsigned int bid = 0;
