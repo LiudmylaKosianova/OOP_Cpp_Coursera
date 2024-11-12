@@ -23,8 +23,13 @@ class OrderBook
     static double getHighPrice(std::vector<OrderBookEntry>& orders);
 
     static double getLowPrice(std::vector<OrderBookEntry>& orders);
-
+    /**returns the earliest time in the order book */
     std::string getEarliestTime();
+
+    /**returns the next time after the specified in the argument time,
+     * if there is no next time, returns the earliest time
+     */
+    std::string getNextTime(std::string timestamp);
 
     private:
     std::vector<OrderBookEntry> orders;
