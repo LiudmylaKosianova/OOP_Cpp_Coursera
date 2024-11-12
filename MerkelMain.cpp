@@ -11,6 +11,7 @@ void MerkelMain::init()
 {
      
     int input = 0;
+    currentTime = orderBook.getEarliestTime();
 
     while(true)
     {
@@ -35,6 +36,7 @@ void MerkelMain::printMenu()
         cout << "5: Print wallet" << endl;
         cout << "6: Continue" << endl;
         cout << "==================" << endl;
+        cout << "Current time is: " << currentTime << endl;
 }
 
 int MerkelMain::getUserOption()

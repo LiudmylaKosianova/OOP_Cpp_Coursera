@@ -24,6 +24,8 @@ class OrderBook
 
     static double getLowPrice(std::vector<OrderBookEntry>& orders);
 
+    std::string getEarliestTime();
+
     private:
     std::vector<OrderBookEntry> orders;
 
