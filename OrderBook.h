@@ -26,6 +26,9 @@ class OrderBook
     /**returns the earliest time in the order book */
     std::string getEarliestTime();
 
+    /**return the total amount of a product */
+    static double getAmount(std::vector<OrderBookEntry>& orders);
+
     /**returns the next time after the specified in the argument time,
      * if there is no next time, returns the earliest time
      */

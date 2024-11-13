@@ -64,6 +64,18 @@ double OrderBook::getLowPrice(std::vector<OrderBookEntry>& orders)
 
 }
 
+double OrderBook::getAmount(std::vector<OrderBookEntry>& orders)
+{
+    double totalAmount = 0.0;
+    for(const OrderBookEntry& e : orders)
+    {
+        totalAmount += e.amount;
+    }
+
+    return totalAmount;
+
+}
+
 std::string OrderBook::getEarliestTime()
 {
     return orders[0].timestamp;

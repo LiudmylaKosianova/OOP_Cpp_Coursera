@@ -64,6 +64,7 @@ void MerkelMain::printStats()
         std::cout << "Asks seen: " << entries.size() << std::endl; 
         std::cout << "Max ask price: " << OrderBook::getHighPrice(entries) << std::endl;
         std::cout << "Min ask price: " << OrderBook::getLowPrice(entries) << std::endl;
+        std::cout << "Total amount of a " << p << " = " << OrderBook::getAmount(entries) << std::endl;
     }
 
     
