@@ -82,12 +82,15 @@ void MerkelMain::printStats()
 
 void MerkelMain::enterAsk()
 {
-    cout << "Specify what you want to sell." << endl;
+    std::cout << "Make an ask - specify what you want to sell in the format \"product, price, amount\" eg. ETH/BTC, 200, 0.05 " << std::endl;
+    std::string input;
+    std::getline(std::cin, input);
+    std::cout << "You entered: " << input << std::endl;
 }
 
 void MerkelMain::enterBid()
 {
-    cout << "Specify what you want to buy." << endl;
+    cout << "Make a bid - specify what you want to buy." << endl;
 }
 
 void MerkelMain::printWallet()
