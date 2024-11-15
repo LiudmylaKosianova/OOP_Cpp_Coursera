@@ -25,8 +25,8 @@ class MerkelMain
     int getUserOption();
     void printHelp();
     void printStats();
-    void printOffer();
-    void printBid();
+    void enterAsk();
+    void enterBid();
     void printWallet();
     void goNext();
     void processUserOption(int userOption);
