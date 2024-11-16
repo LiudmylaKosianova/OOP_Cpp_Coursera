@@ -17,6 +17,11 @@ class CSVReader
     CSVReader();
     static vector<OrderBookEntry> readCSV(string CSVFile);
     static vector<string> tokenise(string csvLine, char separator);
+    static OrderBookEntry stringsToOBE(std::string timestamp,
+                                       std::string product,
+                                       OrderBookType orderBookType,
+                                       std::string price,
+                                       std::string amount);
 
     private:
     static OrderBookEntry stringsToOBE(vector<string> strings);
