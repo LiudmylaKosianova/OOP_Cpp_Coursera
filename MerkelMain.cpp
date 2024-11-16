@@ -42,10 +42,20 @@ void MerkelMain::printMenu()
 int MerkelMain::getUserOption()
 {
     //get user option
-    cout << "" << endl;
-    cout << "Type in 1-6: ";
-    int userOption;
-    cin >> userOption;
+    std::cout << "" << endl;
+    std::cout << "Type in 1-6: ";
+
+    int userOption = 0;
+    std::string line;
+    std::getline(std::cin, line);
+    try
+    {
+    userOption = std::stoi(line);
+    }catch(const std::exception& e)
+    {
+         
+    }
+
     return userOption;
 }
 
@@ -84,7 +94,7 @@ void MerkelMain::enterAsk()
 {
     std::cout << "Make an ask - specify what you want to sell in the format \"product, price, amount\" eg. ETH/BTC, 200, 0.05 " << std::endl;
     std::string input;
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+     
     std::getline(std::cin, input);
 
     std::vector<std::string> tokens = CSVReader::tokenise(input, ',');

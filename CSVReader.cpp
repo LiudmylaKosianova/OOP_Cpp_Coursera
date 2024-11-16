@@ -97,5 +97,6 @@ OrderBookEntry CSVReader::stringsToOBE(std::string timestamp,
                        orderBookType,
                        price,
                        amount};
+    
     return obe;
 }
