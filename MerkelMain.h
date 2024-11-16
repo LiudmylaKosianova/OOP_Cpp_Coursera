@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <limits>
 
 #include "OrderBookEntry.h"
 #include "OrderBook.h"
