@@ -87,6 +87,16 @@ void MerkelMain::enterAsk()
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     std::getline(std::cin, input);
     std::cout << "You entered: " << input << std::endl;
+
+    std::vector<std::string> tokens = CSVReader::tokenise(input, ',');
+    if(tokens.size() != 3)
+    {
+        std::cout << "Bad input." << std::endl;
+    }
+    else
+    {
+        
+    }
 }
 
 void MerkelMain::enterBid()
