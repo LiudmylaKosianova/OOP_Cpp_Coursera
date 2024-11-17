@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <algorithm>
 
 #include "CSVReader.h"
 #include "OrderBookEntry.h"
