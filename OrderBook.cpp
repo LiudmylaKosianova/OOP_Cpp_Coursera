@@ -103,11 +103,15 @@ void OrderBook::insertOrder(OrderBookEntry& order)
     std::sort(orders.begin(), orders.end(),OrderBookEntry::compareByTimestamp);
 }
 
-std::vector<OrderBookEntry> OrderBook::matchAskToBids()
+std::vector<OrderBookEntry> OrderBook::matchAsksToBids(std::string product, std::string timestamp)
 {
     // asks = orderbook.asks in this timeframe
-// bids = orderbook.bids in this timeframe
-// sales = []
+    std::vector<OrderBookEntry> asks = getOrders(OrderBookType::ask, product, timestamp);
+    // bids = orderbook.bids in this timeframe
+    std::vector<OrderBookEntry> bids = getOrders(OrderBookType::bid, product, timestamp);
+    // sales = []
+    std::vector<OrderBookEntry> sales;
+    
 // sort asks lowest first
 // sort bids highest first
 // for ask in asks:
