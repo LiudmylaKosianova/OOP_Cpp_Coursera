@@ -43,6 +43,8 @@ class OrderBook
 
     void insertOrder(OrderBookEntry& order);
 
+    std::vector<OrderBookEntry> matchAskToBids();
+
     private:
     std::vector<OrderBookEntry> orders;
 
