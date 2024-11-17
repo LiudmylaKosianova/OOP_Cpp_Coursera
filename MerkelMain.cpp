@@ -93,29 +93,33 @@ void MerkelMain::printStats()
 void MerkelMain::enterAsk()
 {
     std::cout << "Make an ask - specify what you want to sell in the format \"product, price, amount\" eg. ETH/BTC, 200, 0.05 " << std::endl;
-    std::string input;
-     
+    
+    std::string input;     
     std::getline(std::cin, input);
-
     std::vector<std::string> tokens = CSVReader::tokenise(input, ',');
+
     if(tokens.size() != 3)
-    {
-        std::cout << "Bad input." << std::endl;
-    }
-    else
-    {
-        try
         {
-        OrderBookEntry obe = CSVReader::stringsToOBE(currentTime, 
-                                                     tokens[0], 
-                                                     OrderBookType::ask,
-                                                     tokens[1], 
-                                                     tokens[2]);
-        }catch(const std::exception& e)
-        {
-            std::cout << "MerkelMain::enterAsk bad input!" << std::endl;
+            std::cout << "Bad input." << std::endl;
         }
-    }
+    else
+        {
+            try
+                {
+                    OrderBookEntry obe = CSVReader::stringsToOBE(currentTime, 
+                                                            tokens[0], 
+                                                            OrderBookType::ask,
+                                                            tokens[1], 
+                                                            tokens[2]);
+                    
+                    orderBook.insertOrder(obe);   
+                }
+            catch(const std::exception& e)
+                {
+                    std::cout << "MerkelMain::enterAsk bad input!" << std::endl;
+                }
+        }
+
     std::cout << "You entered: " << input << std::endl;
 }
 
