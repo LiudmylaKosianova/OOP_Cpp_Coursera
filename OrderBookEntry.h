@@ -24,6 +24,12 @@ class OrderBookEntry
      */
     static bool compareByTimestamp(const OrderBookEntry& a, const OrderBookEntry& b);
 
+    static bool compareByPriceAsc(const OrderBookEntry& a, const OrderBookEntry& b);
+
+    static bool compareByPriceDesc(const OrderBookEntry& a, const OrderBookEntry& b);
+
+
+
     //data types to represent a the fields in a row in the data file
     double price;
     double amount;

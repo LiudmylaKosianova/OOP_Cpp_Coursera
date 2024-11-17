@@ -28,4 +28,14 @@ bool OrderBookEntry::compareByTimestamp(const OrderBookEntry& a, const OrderBook
 {
     return a.timestamp < b.timestamp;
 }
+
+bool OrderBookEntry::compareByPriceAsc(const OrderBookEntry& a, const OrderBookEntry& b)
+{
+    return a.price < b.price;
+}
+
+bool compareByPriceDesc(const OrderBookEntry& a, const OrderBookEntry& b)
+{
+    return a.price > b.price;
+}
     
