@@ -23,4 +23,9 @@ OrderBookType OrderBookEntry::stringToOrderBookType(std::string s)
     if(s == "bid")return OrderBookType::bid;
     return OrderBookType::unknown;
 }
+
+bool OrderBookEntry::compareByTimestamp(const OrderBookEntry& a, const OrderBookEntry& b)
+{
+    return a.timestamp < b.timestamp;
+}
     

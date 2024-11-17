@@ -19,6 +19,11 @@ class OrderBookEntry
 
     static OrderBookType stringToOrderBookType(std::string s);
 
+    /**compares OrderBookEntries by timestemp
+     * returns true if the first argument is earlier in time than the second
+     */
+    static bool compareByTimestamp(const OrderBookEntry& a, const OrderBookEntry& b);
+
     //data types to represent a the fields in a row in the data file
     double price;
     double amount;
