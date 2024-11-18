@@ -34,7 +34,7 @@ bool OrderBookEntry::compareByPriceAsc(const OrderBookEntry& a, const OrderBookE
     return a.price < b.price;
 }
 
-bool compareByPriceDesc(const OrderBookEntry& a, const OrderBookEntry& b)
+bool OrderBookEntry::compareByPriceDesc(const OrderBookEntry& a, const OrderBookEntry& b)
 {
     return a.price > b.price;
 }

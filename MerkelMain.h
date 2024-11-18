@@ -8,6 +8,7 @@
 #include "OrderBookEntry.h"
 #include "OrderBook.h"
 #include "CSVReader.h"
+#include "Wallet.h"
 
 using namespace std;
 
@@ -34,5 +35,6 @@ class MerkelMain
 
     OrderBook orderBook{"20200317.csv"};
     string currentTime;
+    Wallet wallet;
  
 };
