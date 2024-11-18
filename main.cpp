@@ -5,16 +5,21 @@
 #include "OrderBookEntry.h"
 #include "MerkelMain.h"
 #include "CSVReader.h"
+#include "Wallet.h"
 
-using namespace std;
 
 
 
 
 int main()
 {
-    MerkelMain app{};
-    app.init();
+    // MerkelMain app{};
+    // app.init();
+
+    Wallet wallet;
+    wallet.insertCurrency("BTC", 11);
+    std::cout << "Wallet contains 11 BTC " << wallet.constainsCurrency("BTC", 11) << std::endl;
+    std::cout << wallet.toString << std::endl;
 
        
 
