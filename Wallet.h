@@ -11,6 +11,8 @@ class Wallet
 
     /**puts currency into the wallet */
     void insertCurrency(std::string type, double amount);
+    /**removes currency from the wallet */
+    bool removeCurrency(std::string type, double amount);
     /**checks if there is the enough amount of currency  */
     bool constainsCurrency(std::string type, double amount);
     /**generates a string representation of a wallet */

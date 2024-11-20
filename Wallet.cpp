@@ -12,6 +12,18 @@ void Wallet::insertCurrency(std::string type, double amount)
     currencies[type] = balance;
 }
 
+bool Wallet::removeCurrency(std::string type, double amount)
+{
+    if (amount < 0) return false;
+    if (currencies[type]==0) return false;
+    if(constainsCurrency(type, amount))
+    {
+        currencies[type] -= amount;
+        return true;
+    } 
+    else return false;  
+}
+
 bool Wallet::constainsCurrency(std::string type, double amount)
 {
     if(currencies.count(type) == 0) return false;

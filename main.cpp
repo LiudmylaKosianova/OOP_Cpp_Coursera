@@ -18,9 +18,12 @@ int main()
 
     Wallet wallet;
     wallet.insertCurrency("BTC", 1);
-    std::cout << "Wallet contains 11 BTC " << wallet.constainsCurrency("BTC", 11) << std::endl;
     wallet.insertCurrency("BTC", 11);
-    std::cout << "Wallet contains 11 BTC " << wallet.constainsCurrency("BTC", 11) << std::endl;
+    wallet.insertCurrency("USD", 10000);
+    
+    std::cout << wallet.toString() << std::endl;
+    wallet.removeCurrency("USD", 1000);
+
     std::cout << wallet.toString() << std::endl;
 
 
