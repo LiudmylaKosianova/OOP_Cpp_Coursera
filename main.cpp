@@ -13,18 +13,18 @@
 
 int main()
 {
-    // MerkelMain app{};
-    // app.init();
+    MerkelMain app{};
+    app.init();
 
-    Wallet wallet;
-    wallet.insertCurrency("BTC", 1);
-    wallet.insertCurrency("BTC", 11);
-    wallet.insertCurrency("USD", 10000);
+    // Wallet wallet;
+    // wallet.insertCurrency("BTC", 1);
+    // wallet.insertCurrency("BTC", 11);
+    // wallet.insertCurrency("USD", 10000);
     
-    std::cout << wallet.toString() << std::endl;
-    wallet.removeCurrency("USD", 1000);
+    // std::cout << wallet.toString() << std::endl;
+    // wallet.removeCurrency("USD", 1000);
 
-    std::cout << wallet.toString() << std::endl;
+    // std::cout << wallet.toString() << std::endl;
 
 
        
