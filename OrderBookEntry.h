@@ -4,7 +4,7 @@
 #include <string>
 
 
-enum class OrderBookType{bid, ask, sale, unknown};
+enum class OrderBookType{bid, ask, asksale, bidsale, unknown};
 
 class OrderBookEntry
 {
