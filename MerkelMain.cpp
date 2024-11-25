@@ -112,6 +112,7 @@ void MerkelMain::enterAsk()
                                                             OrderBookType::ask,
                                                             tokens[1], 
                                                             tokens[2]);
+                    obe.username = "simuser";
                     
                     if(wallet.canFulfilOrder(obe))
                     {
@@ -151,12 +152,19 @@ void MerkelMain::enterBid()
                                                             OrderBookType::bid,
                                                             tokens[1], 
                                                             tokens[2]);
-                    
-                    orderBook.insertOrder(obe);   
+                    obe.username = "simuser";
+                    if(wallet.canFulfilOrder(obe))
+                    {
+                        std::cout << "Wallet looks good" << std::endl;
+                        orderBook.insertOrder(obe);  
+                    }else{
+                        std::cout << "Not enough funds" << std::endl;
+                    }
+                      
                 }
             catch(const std::exception& e)
                 {
-                    std::cout << "MerkelMain::enterAsk bad input!" << std::endl;
+                    std::cout << "MerkelMain::enterBid bad input!" << std::endl;
                 }
         }
 

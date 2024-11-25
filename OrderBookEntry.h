@@ -15,7 +15,8 @@ class OrderBookEntry
                    std::string _product,
                    OrderBookType _orderType,
                    double _price,
-                   double _amount);
+                   double _amount,
+                   std::string  username = "dataset");
 
     static OrderBookType stringToOrderBookType(std::string s);
 
@@ -36,4 +37,5 @@ class OrderBookEntry
     std::string timestamp;
     std::string product;
     OrderBookType orderType;
+    std::string username;
 };
