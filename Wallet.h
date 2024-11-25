@@ -23,6 +23,8 @@ class Wallet
     bool canFulfilOrder(OrderBookEntry order);
     /**generates a string representation of a wallet */
     std::string toString();
+     /**updates the wallet if it is simuser */
+    void processSale(OrderBookEntry& sale);
 
     private:
     std::map<std::string, double> currencies;

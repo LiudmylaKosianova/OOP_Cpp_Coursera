@@ -44,6 +44,7 @@ class OrderBook
     void insertOrder(OrderBookEntry& order);
 
     std::vector<OrderBookEntry> matchAsksToBids(std::string product, std::string timestamp);
+   
 
     private:
     std::vector<OrderBookEntry> orders;
