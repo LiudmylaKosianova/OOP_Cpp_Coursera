@@ -178,8 +178,23 @@ void MerkelMain::printWallet()
 
 void MerkelMain::goNext()
 {
-    cout << "Moving on to the next time frame..." << endl;
-    currentTime = orderBook.getNextTime(currentTime);   
+    std::cout << "Moving on to the next time frame..." << std::endl;
+    currentTime = orderBook.getNextTime(currentTime);  
+
+    for(std::string p : orderBook.getKnownProduct())
+    {
+        std::cout << "Matching " << p << std::endl;
+        std::vector<OrderBookEntry> sales = orderBook.matchAsksToBids(p, currentTime);
+        std::cout << "Number of sales: " << sales.size() << std::endl;
+        for(OrderBookEntry& sale : sales)
+        {
+            if(sale.username == "simuser")
+            {
+                wallet.processSale(sale);
+            }
+        }
+
+    } 
 
 }
 
