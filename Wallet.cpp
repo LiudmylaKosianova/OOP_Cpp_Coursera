@@ -14,7 +14,7 @@ void Wallet::insertCurrency(std::string type, double amount)
 
 bool Wallet::removeCurrency(std::string type, double amount)
 {
-    if (amount < 0) return false;
+    if (amount < 0) throw std::exception{};
     if (currencies[type]==0) return false;
     if(constainsCurrency(type, amount))
     {
